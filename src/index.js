@@ -1,19 +1,19 @@
-// complete the function
-function prime (num) {
-  // code goes here
+const number = parseInt(prompt("Enter a positive number:"));
+let isprime = true;
+if(number === 1) {
+  console.log("1 is neither prime nor composite number.");
 }
+else if (number > 1) {
 
-function solution (arg) {
-  return prime(arg);
-}
-
-if (typeof require !== "undefined" && require.main === module) {
-  if (process.argv.length <= 2) {
-    throw Error("Require argument");
+  for (let i  = 2; i < number; i++ ){
+    if (number % i == 0 ){
+      isprime  = false;
+      break;
+    }
   }
-
-  const arg = process.argv[2];
-  console.log(solution(arg));
+  if (isprime){
+    console.log('${number} is a prime number');
+  } else{
+    console.log('${number} is not a prime number');
+  }
 }
-
-module.exports = { solution };
